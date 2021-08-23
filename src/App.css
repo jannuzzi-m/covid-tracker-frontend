@@ -22,6 +22,7 @@ body, html{
 #main{
   display: flex;
   width: 80%;
+  transition: .3s;
 }
 
 .toggle-button{

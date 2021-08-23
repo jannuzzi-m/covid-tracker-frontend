@@ -13,8 +13,10 @@ const Map = () => {
     }
 
     return (
-        <div id="container">
-            <SVGMap map={Brazil} className="map" />
+        <div id="map-coponent-container">
+            <div id="map-container" style={{ width: showInfo ? '70%' : '100%' }}>
+                <SVGMap map={Brazil} className="map" />
+            </div>
             <div onClick={togleInfo} className="toggle-button">Info</div>
             <div style={{ width: showInfo ? '30%' : 0 }} id="map-info-container">
                 <div className="map-info">

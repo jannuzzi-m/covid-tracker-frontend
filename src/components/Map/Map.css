@@ -1,9 +1,12 @@
-#container{
+#map-coponent-container{
     display: flex;
-    align-items: center;
+    width: 100%;
 }
 #map-container{
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
 }
 .map{
     width: 100%;
@@ -17,8 +20,8 @@
     display: flex;
     align-items: center;
     color: white;
-    transition: .3s;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .map-info{
@@ -28,7 +31,6 @@
     padding: 10px;
     min-height: 50px;
     border-radius: 20px;
-    transition: .3s;
 }
 
 .map-info:hover{
