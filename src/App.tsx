@@ -8,20 +8,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
-import { SVGMap } from "react-svg-map";
-import "react-svg-map/lib/index.css";
-import Brazil from "@svg-maps/brazil";
+import { useState } from 'react';
 
 const App = () => {
+  const [showMenu, setShowMenu] = useState(false)
+  const togleInfo = () => {
+    setShowMenu(!showMenu)
+  }
   return (
     <div id="container">
       <Router>
-        <div id="menu">
+        <div style={{ width: showMenu ? '20%' : 0 }} id="menu">
           <Menu />
         </div>
-        <main id="main">
+          <div onClick={togleInfo} id="togle-menu">Menu</div>
+        <main style={{ width: showMenu ? '80%' : '100%' }} id="main">
           <Switch>
             <Route path="/map">
               <Map />
@@ -29,6 +33,7 @@ const App = () => {
             <Route path="/charts">
               <Charts />
             </Route>
+            <Redirect from='/' to='/map'></Redirect>
           </Switch>
         </main>
       </Router>
