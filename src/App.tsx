@@ -14,7 +14,7 @@ import {
 import { useState } from 'react';
 
 const App = () => {
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(true)
   const togleInfo = () => {
     setShowMenu(!showMenu)
   }
@@ -24,7 +24,7 @@ const App = () => {
         <div style={{ width: showMenu ? '20%' : 0 }} id="menu">
           <Menu />
         </div>
-          <div onClick={togleInfo} id="togle-menu">Menu</div>
+          <div onClick={togleInfo} className="toggle-button">Menu</div>
         <main style={{ width: showMenu ? '80%' : '100%' }} id="main">
           <Switch>
             <Route path="/map">
