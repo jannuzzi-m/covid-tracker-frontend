@@ -17,7 +17,7 @@ const Map = () => {
         setShowInfo(!showInfo)
     }
     const handleOnChange = (e) => {
-        if(!state.name) setShowInfo(true)
+        setShowInfo(true)
         const stateName = e.target.attributes.name.value
         setState({name:stateName, abbr:getAbbr(stateName)})
     }
