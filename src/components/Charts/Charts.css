@@ -1,23 +1,35 @@
-#charts-component-container{
+#charts-component-container {
     display: flex;
     width: 100%;
 }
 
-
-#chart-container{
+#chart-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transition: .3s;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto;
 }
 
-#search-container{
-    padding-top: 10px;
-    overflow: hidden;
-    height: 100%;
+.chart {
+    min-width: 300px;
+    background-color: rgba(0, 0, 0, .2);
+    margin: 1%;
     display: flex;
-    align-items: center;
-    color: white;
-    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    transition: .3s;
+    position: relative;
     cursor: pointer;
+}
+
+.chart:hover {
+    transform: scale(1.1);
+}
+
+.chart-title {
+    position: absolute;
+    top: 0;
 }

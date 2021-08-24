@@ -4,11 +4,13 @@ import { SVGMap } from "react-svg-map";
 import "react-svg-map/lib/index.css";
 import Brazil from "@svg-maps/brazil";
 import { getAbbr } from '../../utils/utils'
+import StateCaseInfo from '../StateCaseInfo/StateCaseInfo'
+import StateAbbr from "../../types/StateAbbr";
 
 const Map = () => {
 
     const [showInfo, setShowInfo] = useState(false)
-    const [state, setState] = useState({
+    const [state, setState] = useState <StateAbbr>({
         name: '',
         abbr: ''
     });
@@ -29,18 +31,7 @@ const Map = () => {
             </div>
             <div onClick={togleInfo} className="toggle-button">Info</div>
             <div style={{ width: showInfo ? '30%' : 0 }} id="map-info-container">
-                <div id="title-info-container">
-                    {state.name}
-                </div>
-                <div className="map-info">
-                    There will be info here!
-                </div>
-                <div className="map-info">
-                    And here
-                </div>
-                <div className="map-info">
-                    Here too!
-                </div>
+                <StateCaseInfo state={state}/>
             </div>
         </div>
     )

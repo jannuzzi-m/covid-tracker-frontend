@@ -24,24 +24,3 @@
     cursor: pointer;
 }
 
-.map-info{
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, .2);
-    width: 85%;
-    padding: 10px;
-    min-height: 50px;
-    border-radius: 20px;
-}
-
-.map-info:hover{
-    transform: scale(1.07);
-}
-
-#title-info-container{
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-size: 2em;
-}
