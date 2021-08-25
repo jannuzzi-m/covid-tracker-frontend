@@ -11,8 +11,9 @@ import {
     helpers, DropShadow, Gradient
 } from 'rumble-charts';
 import CaseInfo from "../StateCaseInfo/StateCaseInfo";
+import CityCaseInfo from '../CityCaseInfo/CityCaseInfo'
 
-const Charts = () => {
+const Charts = ({toggleMenu}) => {
     const city = "city"
     const data = [{
         name: 'lalala',
@@ -27,7 +28,7 @@ const Charts = () => {
     },];
     const [showInfo, setShowInfo] = useState(true)
 
-    const togleInfo = () => {
+    const toggleInfo = () => {
         setShowInfo(!showInfo)
     }
     return (
@@ -81,11 +82,13 @@ const Charts = () => {
                     </Chart>
 
                 </div>
+                <div onClick={toggleInfo} style={{ top: 0, right: 0, position: 'absolute' }} className="toggle-button">Search</div>
+                <div onClick={toggleMenu} style={{ top: 0, left: 0, position: 'absolute' }} className="toggle-button">Menu</div>
+
             </div>
 
-            <div onClick={togleInfo} className="toggle-button">Search</div>
             <div style={{ width: showInfo ? '30%' : 0 }} id="search-container">
-                <CaseInfo state={city} />
+                <CityCaseInfo />
             </div>
 
 

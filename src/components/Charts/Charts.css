@@ -11,12 +11,19 @@
     flex-wrap: wrap;
     justify-content: center;
     overflow-y: auto;
+    overflow-x: hidden;
+    align-content: flex-start;
+    position: relative;
+    padding-top: 30px;
 }
 
 .chart {
     min-width: 300px;
+    max-width: 95%;
+    min-height: calc(min-width);
+    flex-grow: 1;
     background-color: rgba(0, 0, 0, .2);
-    margin: 1%;
+    margin: 3%;
     display: flex;
     align-items: flex-end;
     justify-content: center;

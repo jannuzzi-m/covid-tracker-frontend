@@ -15,7 +15,7 @@ const CaseInfo = ({ state }) => {
         <div id="case-info-container">
 
             <div id="title-info-container">
-                {state.name}
+                {state.name?state.name: "Escolha um estado"}
             </div>
 
             {

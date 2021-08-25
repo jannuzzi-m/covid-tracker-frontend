@@ -1,0 +1,68 @@
+#city-case-indo-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#search-container{
+    width: 100%;
+
+}
+#city-info-form{
+    display: flex;
+    padding: 5px;
+    padding-top: 10px;
+    justify-content: space-around;
+}
+
+#city-info-form input{
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transition: .2s;
+    color: rgb(182, 182, 182);
+    padding-left: 5px;
+    
+}
+
+#city-info-form button{
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: rgba(71, 58, 58, 0.2);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#city-info-form input:hover, #city-info-form button:hover, .city-info:hover{
+    transform: scale(1.08);
+}
+#city-info-container{
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+.city-info{
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, .2);
+    width: 85%;
+    padding: 10px;
+    border-radius: 20px;
+    transition: .1s;
+    display: flex;
+    flex-direction: column;
+}
+#city-info-form input::placeholder{
+    color: #ccc;
+    font-weight: bold;
+}

@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 const App = () => {
   const [showMenu, setShowMenu] = useState(true)
-  const togleInfo = () => {
+  const toggleMenu = () => {
     setShowMenu(!showMenu)
   }
   return (
@@ -24,14 +24,13 @@ const App = () => {
         <div style={{ width: showMenu ? '20%' : 0 }} id="menu">
           <Menu />
         </div>
-          <div onClick={togleInfo} className="toggle-button">Menu</div>
         <main style={{ width: showMenu ? '80%' : '100%' }} id="main">
           <Switch>
             <Route path="/map">
-              <Map />
+              <Map toggleMenu={toggleMenu}/>
             </Route>
             <Route path="/charts">
-              <Charts />
+              <Charts toggleMenu={toggleMenu} />
             </Route>
             <Redirect from='/' to='/map'></Redirect>
           </Switch>

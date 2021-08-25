@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     transition: .3s;
+    position: relative;
 }
 .map{
     width: 100%;
