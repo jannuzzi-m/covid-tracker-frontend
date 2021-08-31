@@ -10,10 +10,7 @@ import StateAbbr from "../../types/StateAbbr";
 const Map = ({toggleMenu}) => {
 
     const [showInfo, setShowInfo] = useState(false)
-    const [state, setState] = useState <StateAbbr>({
-        name: '',
-        abbr: ''
-    });
+    const [state, setState] = useState <StateAbbr>({name: 'Santa Catarina', abbr: 'SC'});
 
     const togleInfo = () => {
         setShowInfo(!showInfo)
@@ -33,7 +30,7 @@ const Map = ({toggleMenu}) => {
             
             </div>
             <div style={{ width: showInfo ? '30%' : 0 }} id="map-info-container">
-                <StateCaseInfo state={state}/>
+                <StateCaseInfo uf={state}/>
             </div>
         </div>
     )
