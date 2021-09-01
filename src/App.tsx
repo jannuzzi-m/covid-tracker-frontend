@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Menu from './components/Menu/Menu';
 import Map from './components/Map/Map';
@@ -12,9 +12,18 @@ import {
   Redirect
 } from "react-router-dom";
 import { useState } from 'react';
-
+import { getStatesLatest } from './ApiUtils'
+import Case from './types/Case';
 const App = () => {
   const [showMenu, setShowMenu] = useState(true)
+  const [lastCases, setLastCases] = useState<Case[]>([])
+  useEffect(() => {
+    getStatesLatest().then(response => {
+      response.json().then(json => {
+        setLastCases(json)
+      })
+    })
+  }, [])
   const toggleMenu = () => {
     setShowMenu(!showMenu)
   }
@@ -27,7 +36,7 @@ const App = () => {
         <main style={{ width: showMenu ? '80%' : '100%' }} id="main">
           <Switch>
             <Route path="/map">
-              <Map toggleMenu={toggleMenu}/>
+              <Map toggleMenu={toggleMenu} lastCases={lastCases}/>
             </Route>
             <Route path="/charts">
               <Charts toggleMenu={toggleMenu} />

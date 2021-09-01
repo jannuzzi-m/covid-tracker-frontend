@@ -4,8 +4,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    justify-items: flex-start;
 }
 
 .case-info:hover,
@@ -17,7 +18,6 @@
 
 #title-info-container {
     width: 100%;
-    height: 90px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -69,6 +69,7 @@
     background-color: rgba(0, 0, 0, .2);
     transition: .2s;
     border-radius: 10px;
+    outline: none;
 }
 
 #mode-type{

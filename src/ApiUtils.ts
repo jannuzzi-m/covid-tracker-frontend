@@ -16,3 +16,7 @@ export const getCityLastMonth = async (city: string):Promise<any> => {
     return await fetch(`${API_PATH}/city/${city}/last_month/`)
 }
 
+export const getStatesLatest = async ():Promise<any> => {
+    return await fetch(`${API_PATH}/latest/state/`)
+}
+
