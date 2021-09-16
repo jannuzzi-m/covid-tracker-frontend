@@ -11,6 +11,8 @@ const Charts = ({ toggleMenu }) => {
     const [data, setData] = useState([])
     const [currentCity, setCurrentCity] = useState()
     const [cityName, setCityName] = useState('')
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         getData()
@@ -19,11 +21,12 @@ const Charts = ({ toggleMenu }) => {
     const toggleInfo = () => {
         setShowInfo(!showInfo)
     }
-    const submitForm = () => {
-        getData(cityName)
+    const submitForm = (city, state) => {
+        getData(city, state)
     }
-    const getData = (city='Chapecó') => {
-        getCityLastMonth(city).then(response => {
+    const getData = (city = 'Chapecó', state = "SC") => {
+        setLoading(true);
+        getCityLastMonth(city, state).then(response => {
             response.json().then((json) => {
                 setCurrentCity(json[0])
                 setData(json.map(c => {
@@ -33,6 +36,7 @@ const Charts = ({ toggleMenu }) => {
                         confirmados: c.confirmed,
                     }
                 }))
+                setLoading(false)
 
             }
             )
@@ -52,7 +56,7 @@ const Charts = ({ toggleMenu }) => {
             </div>
 
             <div style={{ width: showInfo ? '30%' : 0 }} id="search-container">
-                <CityCaseInfo currentCity={currentCity} cityName={cityName} setCityName={setCityName} submit={submitForm}/>
+                <CityCaseInfo currentCity={currentCity} cityName={cityName} setCityName={setCityName} submit={submitForm} loading={loading} setLoading={setLoading} />
             </div>
 
 

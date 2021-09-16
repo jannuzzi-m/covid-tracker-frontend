@@ -8,12 +8,12 @@ export const getStateLastMonth = async (state: string):Promise<any> => {
     return await fetch(`${API_PATH}/state/${state}/last_month/`)
 }
 
-export const getCityLastYear = async (city: string):Promise<any> => {
-    return await fetch(`${API_PATH}/city/${city}/last_year/`)
+export const getCityLastYear = async (city: string, state:string):Promise<any> => {
+    return await fetch(`${API_PATH}/city/${city}/${state}/last_year/`)
 }
 
-export const getCityLastMonth = async (city: string):Promise<any> => {
-    return await fetch(`${API_PATH}/city/${city}/last_month/`)
+export const getCityLastMonth = async (city: string, state:string):Promise<any> => {
+    return await fetch(`${API_PATH}/city/${city}/${state}/last_month/`)
 }
 
 export const getStatesLatest = async ():Promise<any> => {
