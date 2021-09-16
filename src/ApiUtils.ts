@@ -20,3 +20,7 @@ export const getStatesLatest = async ():Promise<any> => {
     return await fetch(`${API_PATH}/latest/state/`)
 }
 
+export const getCitySearch = async (city):Promise<any> => {
+    return await fetch(`${API_PATH}/city/?search=${city}`)
+}
+

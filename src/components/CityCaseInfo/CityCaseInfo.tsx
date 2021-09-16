@@ -1,19 +1,47 @@
 import React from 'react';
 import { useState } from 'react';
 import './CityCaseInfo.css';
+import { getCitySearch } from '../../ApiUtils';
+import Case from '../../types/Case';
 const CityCaseInfo = ({ currentCity, cityName, setCityName, submit }) => {
+    const [searching, setSearching] = useState<boolean>(true);
+    const [searchResults, setSearchResults] = useState<Case[]>([])
     
-    const submitForm = (e) => {
+    const submitForm = (city: string, state: string) => {
+        setSearching(false)
+        submit(city, state)
+    }
+    const handleSearch = (e) => {
         e.preventDefault()
+        getCitySearch(cityName)
+        .then(response => {
+            response.json().then(json => {
+                console.log(json)
+                setSearchResults(json.results);
+                setSearching(true)
+            })
+        })
     }
     return (
         <div id="city-case-indo-container">
             <div id="search-container">
-                <form id="city-info-form" onSubmit={submitForm}>
+                <form id="city-info-form" onSubmit={handleSearch}>
                     <input value={cityName} onChange={e => setCityName(e.target.value)} type="text" placeholder="Ex: Chapecó" spellCheck={false} />
-                    <button onClick={submit} type="submit" id="form">Lupa</button>
+                    <button type="submit" id="form">Lupa</button>
                 </form>
             </div>
+            {searching?
+            <div id="search-results-container">
+                {
+                    searchResults.map((result: Case) => {
+                        return (
+                            <div className="search-result-item" onClick={() => submitForm(result.city, result.state)}>
+                                {result.city}
+                            </div>
+                        )
+                    })
+                }
+            </div>:
             <div id="city-info-container">
                 {
 
@@ -36,6 +64,7 @@ const CityCaseInfo = ({ currentCity, cityName, setCityName, submit }) => {
                 }
 
             </div>
+}
         </div>
     )
 }

@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 
-#city-info-form input:hover, #city-info-form button:hover, .city-info:hover{
+#city-info-form input:hover, #city-info-form button:hover, .city-info:hover, .search-result-item:hover{
     transform: scale(1.08);
 }
 #city-info-container{
@@ -65,4 +65,20 @@
 #city-info-form input::placeholder{
     color: #ccc;
     font-weight: bold;
+}
+#search-results-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+.search-result-item{
+    background-color: rgba(0, 0, 0, .2);
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .2s;
+    cursor: pointer;
+    width: 80%;
 }
