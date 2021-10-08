@@ -46,7 +46,7 @@ const CityCaseInfo = ({ currentCity, cityName, setCityName, submit, loading, set
                                     return (
                                         <div key={result.id} className="search-result-item"
                                             onClick={() => submitForm(result.city, result.state)}>
-                                            {result.city}
+                                            {`${result.city} - ${result.state}`}
                                         </div>
                                     )
                                 })
