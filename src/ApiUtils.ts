@@ -1,4 +1,4 @@
-const API_PATH = 'https://asadeporco.southcentralus.cloudapp.azure.com/api'
+const API_PATH = 'http://localhost:8000/api'
 
 export const getStateLastYear = async (state: string):Promise<any> => {
     return await fetch(`${API_PATH}/state/${state}/last_year/`)

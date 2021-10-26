@@ -16,10 +16,10 @@ const Menu = () => {
             </div>
             <div id="menu-container">
                 <Link to='/map' className="menu-item">
-                    Map
+                    Mapa
                 </Link>
                 <Link to='/charts' className="menu-item">
-                    Charts
+                    Gráficos
                 </Link>
             </div>
         </div>
